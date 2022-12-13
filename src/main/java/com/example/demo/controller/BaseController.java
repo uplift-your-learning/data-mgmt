@@ -17,14 +17,14 @@ public class BaseController {
 
     private final BaseModelRepository baseModelRepository;
 
-    @PostMapping("/add")
+    @PostMapping("/chapters/add")
     public BaseModel addDoc(@RequestBody BaseModel baseModel) {
         return baseModelRepository.save(baseModel);
     }
 
     @GetMapping("/chapters/{chapterNumber}")
     public BaseModel getDoc(@PathVariable final  int chapterNumber) {
-        return baseModelRepository.getBaseModelBySubjectAndChapterNumber("SQL", chapterNumber);
+        return baseModelRepository.findBySubjectAndChapterNumber("SQL", chapterNumber);
     }
 
 }
