@@ -8,11 +8,11 @@ spring:
     password: password
   jpa:
     generate-ddl: true
-    show-sql: true
+    show-sql: false
     hibernate:
       #option create will drop n create table again, good for testing, comment this in production
       #update
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         # The SQL dialect makes Hibernate generate better SQL for the chosen database
